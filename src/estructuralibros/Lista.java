@@ -7,11 +7,12 @@ package estructuralibros;
 
 /**
  *
- * @author alumno
+ * @author Kevin Loarca 0901-17-11537
  */
 public class Lista {
 	private Nodo cabeza=null;
 	private int longitud=0;
+        
 	private class Nodo {
 		public Libro libro;
 		public Nodo siguiente=null;
@@ -19,12 +20,14 @@ public class Lista {
 			this.libro=libro;
 		}
 	}
+        
 	public void insertarPrincipio(Libro libro) {
 		Nodo nodo=new Nodo(libro);
 		nodo.siguiente=cabeza;
 		cabeza=nodo;
 		longitud++;	
 	}
+        
 	public void insertarFinal(Libro libro) {
 		Nodo nodo=new Nodo(libro);
 		if (cabeza==null) {
@@ -38,6 +41,7 @@ public class Lista {
 		}
 		longitud++;
 	}
+        
 	public void insertarDespues(int n, Libro libro) {
 		Nodo nodo=new Nodo(libro);
 		if (cabeza==null) {
@@ -54,6 +58,7 @@ public class Lista {
 		}
 		longitud++;
 	}
+        
 	public Libro obtener(int n) {
 		if (cabeza==null) {
 			return null;
@@ -71,12 +76,15 @@ public class Lista {
 			}
 		}
 	}
+        
 	public int contar() {
 		return longitud;
 	}
+        
         public boolean estaVacia() {
             return cabeza==null;
         }
+        
         public void eliminaPrincipio() {
             if (cabeza!=null){
                 Nodo primer = cabeza;
@@ -84,6 +92,7 @@ public class Lista {
                 longitud--;
             }
         }
+        
         public void eliminarUltimo() {
             if (cabeza!= null) {
                 if (cabeza.siguiente==null) {
@@ -99,6 +108,17 @@ public class Lista {
                 }
             }
         }
+        
+        public String Listar(){
+            String Dato="";
+            Nodo aux=cabeza;
+            while (aux!=null){
+                Dato+="("+aux.libro.getTitulo()+","+aux.libro.getAutor()+","+aux.libro.getIsbn()+")";
+                aux=aux.siguiente;
+            }
+            return Dato;
+        }
+        
         public void eliminarLibro(int n) {
             if (cabeza!=null){
                 if (n==0){
