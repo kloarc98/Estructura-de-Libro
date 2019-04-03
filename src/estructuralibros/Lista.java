@@ -20,14 +20,15 @@ public class Lista {
 			this.libro=libro;
 		}
 	}
-        
+        //Inserta el primer dato al principio de la lista
 	public void insertarPrincipio(Libro libro) {
 		Nodo nodo=new Nodo(libro);
 		nodo.siguiente=cabeza;
 		cabeza=nodo;
 		longitud++;	
 	}
-        
+        //observa si la cabeza esta en el null si esta null lo cola alli en dado caso esta lleno pasa a la siguiente
+        //hasta encontrar el ultimo puesto en el cual esta vacio lo pone alli
 	public void insertarFinal(Libro libro) {
 		Nodo nodo=new Nodo(libro);
 		if (cabeza==null) {
@@ -41,7 +42,7 @@ public class Lista {
 		}
 		longitud++;
 	}
-        
+        //lo ponen contador donde le toca el siguinte dato despues del ultimo que se puso anteriormente
 	public void insertarDespues(int n, Libro libro) {
 		Nodo nodo=new Nodo(libro);
 		if (cabeza==null) {
@@ -59,6 +60,7 @@ public class Lista {
 		longitud++;
 	}
         
+        //se mira en que posicion esta el dato que se esta buscando
 	public Libro obtener(int n) {
 		if (cabeza==null) {
 			return null;
@@ -77,14 +79,16 @@ public class Lista {
 		}
 	}
         
+        //cuenta la cantidad que hay en la lista
 	public int contar() {
 		return longitud;
 	}
-        
+        //se observa si esta vacia la lista o no con el nodo cabeza
         public boolean estaVacia() {
             return cabeza==null;
         }
         
+        //Elimina la primera posicion de la lista
         public void eliminaPrincipio() {
             if (cabeza!=null){
                 Nodo primer = cabeza;
@@ -93,6 +97,7 @@ public class Lista {
             }
         }
         
+        //Elimina la ultima posicion de la lista
         public void eliminarUltimo() {
             if (cabeza!= null) {
                 if (cabeza.siguiente==null) {
@@ -109,6 +114,7 @@ public class Lista {
             }
         }
         
+        //muestra toda la lista que esta ingresada
         public String Listar(){
             String Dato="";
             Nodo aux=cabeza;
@@ -119,6 +125,7 @@ public class Lista {
             return Dato;
         }
         
+        //Elimina toda la lista 
         public void eliminarLibro(int n) {
             if (cabeza!=null){
                 if (n==0){

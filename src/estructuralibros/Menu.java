@@ -8,21 +8,25 @@ import java.util.Scanner;
 
 /**
  *
- * @author alumno
+ * @author Kevin Loarca 0901-17-11537
  */
 public class Menu {
+    
     public static void main (String[] args){
             Scanner Scanner = new Scanner(System.in);
             Lista list = new Lista();
             int opcion;
             String autor,titulo,isbn;
+            //Un do while para a la hora de hace una accion del main te regrese al main
             do{
+                //El menu de todas las opciones
             System.out.println("Ingrese que opcion desea");
             System.out.print("1. Inserta al Principio\n2. Insertar Final\n3. Insertar Despues\n"
                     + "4. Obtener Numero\n5. Contar\n6. Eliminar Principio\n7. Eliminar Ultimo\n8. Eliminar Libro\n9. Salir\n");
            opcion = Scanner.nextInt();
                 
             switch(opcion){
+                //Todos los case de las opciones del menu
                 case 1:
                     System.out.println("Ingrese Autor");
                     autor = Scanner.next();
